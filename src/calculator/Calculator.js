@@ -16,7 +16,7 @@ export class Calculator {
   }
 
   #initialize() {
-    if (isInvalidFormat(this.#input)) {
+    if (this.#input.startsWith("//") && isInvalidFormat(this.#input)) {
       throw new Error(ERROR_MESSAGE.ERR_INVALD_FORMAT);
     }
 
