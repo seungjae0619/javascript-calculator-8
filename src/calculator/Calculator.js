@@ -12,6 +12,10 @@ export class Calculator {
   }
 
   #initialize() {
+    if (!isInvalidFormat(input)) {
+      throw new Error(ERROR_MESSAGE.ERR_INVALD_FORMAT);
+    }
+
     const { delimiter, expression } = extractDelimiter(this.#input);
 
     this.#numbers = parser(delimiter, expression);

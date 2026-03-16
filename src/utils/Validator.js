@@ -9,5 +9,5 @@ export function isNotNumber(number) {
 }
 
 export function isInvalidFormat(string) {
-  return REGEX.CUSTOM_DELIMITER.test(string);
+  return !REGEX.CUSTOM_DELIMITER.test(string);
 }
