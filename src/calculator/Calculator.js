@@ -17,7 +17,7 @@ export class Calculator {
 
   #initialize() {
     if (this.#input.startsWith("//") && isInvalidFormat(this.#input)) {
-      throw new Error(ERROR_MESSAGE.ERR_INVALD_FORMAT);
+      throw new Error(ERROR_MESSAGE.ERR_INVALID_FORMAT);
     }
 
     const { delimiter, expression } = extractDelimiter(this.#input);
