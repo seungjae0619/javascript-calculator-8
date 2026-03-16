@@ -1,6 +1,3 @@
-import { ERROR_MESSAGE } from "../constants/constants";
-import { isInvalidFormat } from "./Validator";
-
 export function extractDelimiter(input) {
   if (input.startsWith("//")) {
     const delimiter = input.split("\\n")[0].slice(2);
