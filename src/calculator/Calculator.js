@@ -1,6 +1,10 @@
 import { ERROR_MESSAGE } from "../constants/constants.js";
 import { extractDelimiter, parser } from "../utils/Parser.js";
-import { isNegative, isNotNumber } from "../utils/Validator.js";
+import {
+  isInvalidFormat,
+  isNegative,
+  isNotNumber,
+} from "../utils/Validator.js";
 
 export class Calculator {
   #input;
@@ -12,7 +16,7 @@ export class Calculator {
   }
 
   #initialize() {
-    if (!isInvalidFormat(input)) {
+    if (isInvalidFormat(this.#input)) {
       throw new Error(ERROR_MESSAGE.ERR_INVALD_FORMAT);
     }
 
