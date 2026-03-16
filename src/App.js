@@ -1,6 +1,6 @@
 import { Console } from "@woowacourse/mission-utils";
 import { CALCULATOR_MESSAGE } from "./constants/constants.js";
-import { extractDelimiter, parser } from "./utils/Parser.js";
+import { Calculator } from "./calculator/Calculator.js";
 
 class App {
   async run() {
@@ -9,8 +9,11 @@ class App {
         CALCULATOR_MESSAGE.START_MESSAGE,
       );
 
-      const { delimiter, expression } = extractDelimiter(input);
-      const numberArray = parser(delimiter, expression);
+      const calculator = new Calculator(input);
+
+      const result = calculator.calculate();
+
+      Console.print(`${CALCULATOR_MESSAGE.RESULT_MESSAGE} ${result}`);
     } catch (error) {
       throw new Error(error.message);
     }
