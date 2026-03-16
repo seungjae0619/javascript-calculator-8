@@ -41,8 +41,21 @@ describe("문자열 계산기", () => {
     await expect(app.run()).rejects.toThrow("[ERROR]");
   });
 
-  test("예외 테스트 - 빈 값 입력", async () => {
-    const inputs = [""];
+  test("예외 테스트 - 잘못된 커스텀 구분자 형식", async () => {
+    const inputs = ["//1,2,3"];
     mockQuestions(inputs);
+
+    const app = new App();
+
+    await expect(app.run()).rejects.toThrow("[ERROR]");
+  });
+
+  test("예외 테스트 - 잘못된 커스텀 구분자 형식", async () => {
+    const inputs = ["//..\\n1.2.3"];
+    mockQuestions(inputs);
+
+    const app = new App();
+
+    await expect(app.run()).rejects.toThrow("[ERROR]");
   });
 });
