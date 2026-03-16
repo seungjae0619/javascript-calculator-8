@@ -32,12 +32,17 @@ describe("문자열 계산기", () => {
     });
   });
 
-  test("예외 테스트", async () => {
+  test("예외 테스트 - 음수 입력", async () => {
     const inputs = ["-1,2,3"];
     mockQuestions(inputs);
 
     const app = new App();
 
     await expect(app.run()).rejects.toThrow("[ERROR]");
+  });
+
+  test("예외 테스트 - 빈 값 입력", async () => {
+    const inputs = [""];
+    mockQuestions(inputs);
   });
 });

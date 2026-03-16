@@ -1,6 +1,6 @@
 export function extractDelimiter(input) {
   if (input.startsWith("//")) {
-    const delimiter = input.split("\\n")[0][2];
+    const delimiter = input.split("\\n")[0].slice(2);
     const expression = input.split("\\n")[1];
 
     return {

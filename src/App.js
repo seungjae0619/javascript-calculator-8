@@ -13,9 +13,9 @@ class App {
 
       const result = calculator.calculate();
 
-      Console.print(`${CALCULATOR_MESSAGE.RESULT_MESSAGE} ${result}`);
+      Console.print(`${CALCULATOR_MESSAGE.RESULT_MESSAGE}${result}`);
     } catch (error) {
-      throw new Error(error.message);
+      Console.print(error.message);
     }
   }
 }

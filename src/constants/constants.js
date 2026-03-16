@@ -3,4 +3,6 @@ export const CALCULATOR_MESSAGE = {
   RESULT_MESSAGE: "결과 : ",
 };
 
-export const ERROR_MESSAGE = {};
+export const ERROR_MESSAGE = {
+  INVALID_NEGATIVE: "[ERROR] 음수는 입력할 수 없습니다",
+};
